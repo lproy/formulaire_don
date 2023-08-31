@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+/**
+ * @author Prenom Nom courriel
+ * @todo Lier les modules avec des instructions @import
+ * @todo Compléter selon l'énoncé de l'exercice
+ */
+
+/*
+ * ------------------
+ * TABLE DES MATIERES
+ * ------------------
+ * Librairies
+ ** Normalize
+ */
+@import "../../../node_modules/normalize.scss/normalize";
+/*
+
+ * UTILITAIRES
+ ** Variables
+ ** Mixins
+ * BASE
+ ** Typographie
+ ** Hyperliens
+ ** Boutons
+ * MODULES
+ ** gds - Styles généraux du Guide de styles
+ ** palette - Palette de couleurs
+ ** listeInteractivite - Éléments interactifs
+ */
+
+/****** Librairies ******/
+
+/** Normalize **/
+
+
+/**** UTILITAIRES ****/
+
+/** Variables **/
+@import 'utilitaires/variables';
+
+/** Mixins **/
+@import 'utilitaires/mixins';
+
+/****** BASE ******/
+
+/** Typographie **/
+@import 'base/typo';
+@import "base/grille";
+
+/** Hyperliens **/
+@import 'base/hyperlien';
+
+/** Boutons **/
+@import 'base/bouton';
+
+/****** MODULES ******/
+
+
+/* styles.scss */
+
+/* Styles for the .form class */
+.form {
+  /* Add your form styles here */
+}
+
+/* Styles for the radio buttons */
+.form__radio {
+  /* Add styles for radio buttons here */
+}
+
+/* Styles for the text input when "Autre montent" is selected */
+.form__radio#autre:checked ~ .hidden-input {
+  display: inline-block;
+}
+
+/* Styles for the .donation-source__label class */
+.donation-source__label {
+  /* Add your styles for donation source labels here */
+}
+
+/* Styles for the personal info inputs */
+.personal-info__input {
+  /* Add styles for personal info inputs here */
+}
+
+/* Styles for the personal info select dropdowns */
+.personal-info__select {
+
+}
+
+/* Styles for the payment inputs */
+.payment__input {
+
+}
+
+/* Styles for the payment select dropdowns */
+.payment__select {
+  /* Add styles for payment select dropdowns here */
+}
+
+/* Styles for the review paragraphs */
+.review__paragraph {
+
+}
+
+/* Styles for the review submit button */
+.review__submit-button {
+
+}
+

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>HTML5 - Structure sémantique</title>
+    <link rel="stylesheet" href="liaisons/css/styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Entete de site</h1>
+    <nav>
+        <ul>
+            <li><a href="">Mon don</a></li>
+            <li><a href="">Mes informations</a></li>
+            <li><a href="">Paiement</a></li>
+            <li><a href="">Révision</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="conteneur">
+    <div class="container">
+        <h2 class="container__title">Mon don</h2>
+        <section class="container__section">
+            <form class="form">
+                <fieldset class="form__fieldset">
+                    <legend class="form__legend">Type du don</legend>
+                    <label class="form__label" for="unique">
+                        <input id="unique" type="radio" name="typeDon" value="unique" checked class="form__radio">
+                        Don unique
+                    </label>
+                    <label class="form__label" for="mensuel">
+                        <input id="mensuel" type="radio" name="typeDon" value="mensuel" class="form__radio">
+                        Don mensuel
+                    </label>
+                </fieldset>
+            </form>
+        </section>
+        <section class="container__section">
+            <form class="form">
+                <fieldset class="form__fieldset">
+                    <legend class="form__legend">Montant du don</legend>
+                    <label class="form__label" for="25">
+                        <input id="25" type="radio" name="montant" value="25$" checked class="form__radio">
+                        25$
+                    </label>
+                    <label class="form__label" for="50">
+                        <input id="50" type="radio" name="montant" value="50$" class="form__radio">
+                        50$
+                    </label>
+                    <label class="form__label" for="100">
+                        <input id="100" type="radio" name="montant" value="100$" class="form__radio">
+                        100$
+                    </label>
+                    <label class="form__label" for="autre">
+                        <input id="autre" type="radio" name="montant" value="autre" class="form__radio">
+                        <input type="text" class="hidden-input" id="textInput" placeholder="Entrez votre montant">
+                        Autre montant $
+                    </label>
+                </fieldset>
+            </form>
+        </section>
+        <section class="donation-source">
+            <form class="donation-source__form">
+                <fieldset class="donation-source__fieldset">
+                    <legend class="donation-source__legend">Provenance du don</legend>
+                    <label class="donation-source__label" for="moi">
+                        <input id="moi" type="radio" name="provenance" value="moi" checked
+                               class="donation-source__radio">
+                        Moi-même
+                    </label>
+                    <label class="donation-source__label" for="entreprise">
+                        <input id="entreprise" type="radio" name="provenance" value="entreprise"
+                               class="donation-source__radio">
+                        Une entreprise
+                    </label>
+                </fieldset>
+            </form>
+        </section>
+    </div>
+    <div id="container__2">
+        <h2>Mes informations</h2>
+        <section class="personal-info">
+            <form class="personal-info__form">
+                <fieldset class="personal-info__fieldset">
+                    <legend class="personal-info__legend">Personel</legend>
+                    <label class="personal-info__label" for="prenom">Prénom</label>
+                    <br>
+                    <input type="text" id="prenom" name="prenom" required pattern="[A-Za-z]+"
+                           title="Veuillez entrer un prénom valide (lettres seulement)"
+                           oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);"
+                           class="personal-info__input">
+                    <br>
+                    <span class="error-message personal-info__error" id="prenom-error">Le prénom est obligatoire et doit contenir uniquement des lettres.</span>
+                    <br>
+                    <label class="error-message personal-info__label" for="nom">Nom</label>
+                    <br>
+                    <input type="text" id="nom" name="nom" required pattern="[A-Za-z]+"
+                           title="Veuillez entrer un nom valide (lettres seulement)"
+                           oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);"
+                           class="personal-info__input">
+                    <br>
+                    <span class="error-message personal-info__error" id="nom-error">Le nom est obligatoire et doit contenir uniquement des lettres.</span>
+                    <br>
+                    <label class="personal-info__label" for="courriel">Courriel</label>
+                    <br>
+                    <input type="email" id="courriel" name="courriel" required class="personal-info__input">
+                    <br>
+                    <span class="error-message personal-info__error" id="courriel-error">L'adresse courriel est obligatoire et doit contenir un @.</span>
+                </fieldset>
+                <fieldset class="personal-info__fieldset">
+                    <legend class="personal-info__legend">Contact</legend>
+                    <label class="personal-info__label" for="pays">Pays</label>
+                    <br>
+                    <select id="pays" name="pays" class="personal-info__select">
+                        <option value="canada">Canada</option>
+                        <option value="france">France</option>
+                        <option value="etats-unis">États-Unis</option>
+                        <option value="royaume-uni">Royaume-Uni</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                    <br>
+                    <label class="personal-info__label" for="province">Province</label>
+                    <br>
+                    <select id="province" name="province" class="personal-info__select">
+                        <option value="alberta">Alberta</option>
+                        <option value="colombie-britannique">Colombie-Britannique</option>
+                        <option value="ile-du-prince-edouard">Île-du-Prince-Édouard</option>
+                        <option value="manitoba">Manitoba</option>
+                        <option value="nouveau-brunswick">Nouveau-Brunswick</option>
+                        <option value="nouvelle-ecosse">Nouvelle-Écosse</option>
+                        <option value="ontario">Ontario</option>
+                        <option value="quebec">Québec</option>
+                        <option value="saskatchewan">Saskatchewan</option>
+                        <option value="terre-neuve-et-labrador">Terre-Neuve et Labrador</option>
+                    </select>
+                </fieldset>
+            </form>
+        </section>
+        <section class="payment">
+            <h2 class="payment__title">Paiement</h2>
+            <form class="payment__form">
+                <fieldset class="payment__fieldset">
+                    <legend class="payment__legend">Informations de Paiement</legend>
+                    <label class="payment__label" for="nomTitulaire">Nom du Titulaire de la Carte</label>
+                    <br>
+                    <input type="text" id="nomTitulaire" name="nomTitulaire" required class="payment__input">
+                    <br>
+                    <span class="error-message payment__error" id="nomTitulaire-error">Le nom est obligatoire et doit contenir uniquement des lettres.</span>
+                    <br>
+                    <label class="payment__label" for="numeroCarte">Numéro de la Carte</label>
+                    <br>
+                    <input type="text" id="numeroCarte" name="numeroCarte" required maxlength="16" class="payment__input">
+                    <br>
+                    <span class="error-message payment__error" id="numeroCarte-error">Le numero doit composer 16 chiffre.</span>
+                    <br>
+                    <label class="payment__label" for="moisExpiration">Date d'Expiration</label>
+                    <select class="payment__select" id="moisExpiration" name="moisExpiration" required>
+                        <option value="" disabled selected>Mois</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <label class="payment__label" for="anneeExpiration">Année d'Expiration</label>
+                    <select class="payment__select" id="anneeExpiration" name="anneeExpiration" required>
+                        <option value="" disabled selected>Année</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                    </select>
+                    <br>
+                    <span class="error-message payment__error" id="anneeExpiration-error">Entrer une date.</span>
+                    <br>
+                    <label class="payment__label" for="codeSecurite">Code de Sécurité</label>
+                    <input class="payment__input" type="text" id="codeSecurite" name="codeSecurite" required maxlength="3">
+                    <br>
+                    <span class="error-message payment__error" id="codeSecurite-error">Le numero doit être composer 3 chiffre.</span>
+                    <br>
+                    <label class="payment__label" for="codePostal">Code Postal</label>
+                    <br>
+                    <input class="payment__input" type="text" id="codePostal" name="codePostal" required
+                           pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" maxlength="6">
+                    <br>
+                    <span class="error-message payment__error" id="codePostal-error">Utilisez le format A1A 1A1.</span>
+                </fieldset>
+            </form>
+        </section>
+        <section class="review">
+            <h2 class="review__title">Révision</h2>
+            <form class="review__form">
+                <fieldset class="review__fieldset">
+                    <legend class="review__legend">Mon don</legend>
+                    <p class="review__strong-paragraph">Type du don : <span class="review__paragraph">Unique/Mensuel</span></p>
+                    <p class="review__strong-paragraph">Montant du don : <span class="review__paragraph">$</span></p>
+                    <p class="review__strong-paragraph">Provenance du don : <span class="review__paragraph">Moi-même/Entreprise</span></p>
+                </fieldset>
+                <fieldset class="review__fieldset">
+                    <legend class="review__legend">Mes informations</legend>
+                    <p class="review__strong-paragraph">Prénom : <span class="review__paragraph"></span></p>
+                    <p class="review__strong-paragraph">Nom : <span class="review__paragraph"></span></p>
+                    <p class="review__strong-paragraph">Courriel : <span class="review__paragraph"></span></p>
+                    <p class="review__strong-paragraph">Pays : <span class="review__paragraph"></span>:</p>
+                    <p class="review__strong-paragraph">Province : <span class="review__paragraph"></span></p>
+                </fieldset>
+                <fieldset class="review__fieldset">
+                    <legend class="review__legend">Paiement</legend>
+                    <p class="review__strong-paragraph">Titulaire : <span class="review__paragraph"></span></p>
+                    <p class="review__strong-paragraph">Numéro de la carte : <span class="review__paragraph"></span></p>
+                    <p class="review__strong-paragraph">Date d'Expiration : <span class="review__paragraph"></span></p>
+                    <p class="review__strong-paragraph">Code de Sécurité : <span class="review__paragraph"></span></p>
+                    <p class="review__strong-paragraph">Code Postal : <span class="review__paragraph"></span></p>
+                </fieldset>
+                <input value="Confirmer le Don de 0.00$" type="submit" class="review__submit-button">
+            </form>
+        </section>
+    </div>
+</main>
+<aside class="aside">
+    <h3 class="aside__title">Barre latérale</h3>
+    <p class="aside__text">Lorem ipsum dolor nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est
+        eros, vel fringilla
+        urna. Pellentesque odio rhoncus</p>
+</aside>
+
+<footer class="footer">
+    <h3 class="footer__title">Pied de page</h3>
+    <p class="footer__text">Lorem ipsum dolor nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est
+        eros, vel fringilla
+        urna. Pellentesque odio rhoncus</p>
+</footer>
+</body>
+</html>

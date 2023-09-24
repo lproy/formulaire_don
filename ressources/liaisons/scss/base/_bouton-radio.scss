@@ -1,0 +1,47 @@
+/**
+* @author Prenom Nom courriel
+* @todo Compléter selon l'énoncé de l'exercice
+*/
+
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  @include btnRadio;
+  @media(min-width: 500px) {
+    width: 212px;
+  }
+}
+
+input[type="radio"]:hover + label {
+  @include couleur;
+}
+
+input[type="radio"]:checked + label {
+  border-radius: 8px;
+  @include checked;
+
+}
+
+
+.form__label-text {
+  //mixim
+  @include btnRadio;
+  flex-direction: column-reverse;
+
+  @media(min-width: 500px) {
+    width: 212px;
+  }
+}
+
+.form__label-text:hover:not(.checked) {
+  @include couleur;
+}
+
+/* Styles pour le label lorsque le bouton radio "autre" est coché */
+.checked {
+  @include checked;
+
+}

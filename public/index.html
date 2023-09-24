@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire de don</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="liaisons/images/fivicon.svg">
+    <link rel="stylesheet" href="liaisons/css/styles.css">
+</head>
+<body>
+<main class="conteneur">
+    <form class="form" id="msform">
+        <ul id="progressbar">
+            <li class="active">Mon don</li>
+            <li>Mes informations</li>
+            <li>Paiement</li>
+            <li>Révision</li>
+        </ul>
+        <section class="section">
+            <h1 class="container__h1">Mon don</h1>
+            <fieldset role="radiogroup" class="form__fieldset">
+                <legend class="form__legend">Type du don</legend>
+                <div class="form__div-deux">
+                    <input id="unique" type="radio" name="typeDon" value="Don unique" checked
+                           class="form__radio">
+                    <label class="form__label" for="unique" tabindex="1">Don unique</label>
+                    <input id="mensuel" type="radio" name="typeDon" value="Don mensuel" class="form__radio">
+                    <label class="form__label" for="mensuel" tabindex="2">Don mensuel</label>
+                </div>
+            </fieldset>
+            <fieldset role="radiogroup" aria-required="true"
+                      aria-invalid="true" class="form__fieldset">
+                <legend class="form__legend">Montant du don</legend>
+                <div class="form__div-deux">
+                    <input id="25" type="radio" name="montant" value="25$" checked class="form__radio">
+                    <label class="form__label" for="25" tabindex="3">25$</label>
+                    <input id="50" type="radio" name="montant" value="50$" class="form__radio">
+                    <label class="form__label" for="50" tabindex="4">50$</label>
+                    <input id="100" type="radio" name="montant" value="100$" class="form__radio">
+                    <label class="form__label" for="100" tabindex="5">100$</label>
+                    <label class="form__label form__label-text" for="autre" tabindex="6">
+                        <label class="form__label" for="textInput" style="display: none"></label>
+                        <input type="text" name="textInput" class="autre hiddenInput" id="textInput"
+                               aria-describedby="err_autre" oninput=" this.value = this.value.replace(/[^0-9]/g, '');">
+                        <span class="montant__afficher" id="montant"></span>
+                        <input id="autre" type="radio" name="montant" value="autre" class="form__radio">
+                        Autre montant
+                    </label>
+                    <span class="error-message error-texte" id="err_textInput"></span>
+                </div>
+            </fieldset>
+            <fieldset role="radiogroup" class="form__fieldset">
+                <legend class="form__legend">Provenance du don</legend>
+                <div class="form__div-deux">
+                    <input id="moi" type="radio" name="provenance" value="Moi-même" checked
+                           class="form__radio">
+                    <label class="form__label" for="moi" tabindex="7">Moi-même</label>
+                    <input id="entreprise" type="radio" name="provenance" value="Une entreprise"
+                           class="form__radio">
+                    <label class="form__label" for="entreprise" tabindex="8">Une entreprise</label>
+                </div>
+            </fieldset>
+            <div class="personal-info__btn">
+                <input type="button" name="next" class="next action-button bouton review__submit-button"
+                       value="Suivant"/>
+            </div>
+        </section>
+        <section class="section">
+            <h1 class="container__title">Mes informations</h1>
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Coordonnées</legend>
+                <div class="personal-info__row">
+                    <div class="personal-info__div">
+                        <label class="personal-info__label" for="prenom">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" required pattern="^[a-zA-ZÀ-ÿ -/']+$"
+                               title="Veuillez entrer un prénom valide (lettres seulement)"
+                               oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);"
+                               class="prenm personal-info__input" aria-describedby="err_prenom"
+                               autocomplete="given-name">
+                        <span class="error-message" id="err_prenom"></span>
+                    </div>
+                    <div class="personal-info__div">
+                        <label class="personal-info__label" for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" required pattern="^[a-zA-ZÀ-ÿ -/']+$"
+                               title="Veuillez entrer un nom valide (lettres seulement)"
+                               oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);"
+                               class="nom personal-info__input" aria-describedby="err_nom"
+                               autocomplete="family-name">
+                        <span class="error-message" id="err_nom"></span>
+                    </div>
+                </div>
+                <div class="personal-info__div">
+                    <label class="personal-info__label" for="courriel">Courriel</label>
+                    <input type="email" id="courriel" name="courriel" required class="courriel personal-info__input"
+                           pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,4})+)$"
+                           aria-describedby="err_courriel" autocomplete="email">
+                    <span class="error-message" id="err_courriel"></span>
+                </div>
+            </fieldset>
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Localisation</legend>
+                <div class="personal-info__row">
+                    <div class="personal-info__div">
+                        <label class="personal-info__label" for="pays">Pays</label>
+                        <select id="pays" name="pays" class="personal-info__select">
+                            <option value="Canada">Canada</option>
+                            <option value="France">France</option>
+                            <option value="États-unis">États-Unis</option>
+                            <option value="Royaume-uni">Royaume-Uni</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="personal-info__div">
+                        <label class="personal-info__label" for="province">Province</label>
+                        <select id="province" name="province" class="personal-info__select">
+                            <option value="Alberta">Alberta</option>
+                            <option value="Colombie-britannique">Colombie-Britannique</option>
+                            <option value="Île-du-prince-edouard">Île-du-Prince-Édouard</option>
+                            <option value="Manitoba">Manitoba</option>
+                            <option value="Nouveau-brunswick">Nouveau-Brunswick</option>
+                            <option value="Nouvelle-Écosse">Nouvelle-Écosse</option>
+                            <option value="Ontario">Ontario</option>
+                            <option value="Québec">Québec</option>
+                            <option value="Saskatchewan">Saskatchewan</option>
+                            <option value="Terre-Neuve et Labrador">Terre-Neuve et Labrador</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="personal-info__div">
+                    <label class="personal-info__label" for="adresse">Adresse</label>
+                    <input class="personal-info__input" type="text" id="adresse" name="adresse" required
+                           aria-describedby="err_adresse" autocomplete="off" pattern="^[0-9]+[a-zA-ZÀ-ÿ0-9 \-]+$">
+                    <span class="error-message" id="err_adresse"></span>
+                </div>
+                <div class="personal-info__div">
+                    <label class="personal-info__label" for="codePostalDeux">Code Postal</label>
+                    <input class="personal-info__input" type="text" id="codePostalDeux" name="codePostalDeux"
+                           required
+                           pattern="^[a-zA-Z][0-9][a-zA-Z] [0-9][a-zA-Z][0-9]$" maxlength="7"
+                           aria-describedby="err_codePostalDeux" autocomplete="postal-code"
+                           oninput="formatCodePostal(this)">
+                    <span class="error-message" id="err_codePostalDeux"></span>
+                </div>
+            </fieldset>
+            <div class="personal-info__btn">
+                <input type="button" name="previous"
+                       class="previous action-button-previous bouton bouton--secondaire review__submit-button"
+                       value="Précédent"/>
+                <input type="button" name="next" class="next action-button bouton review__submit-button"
+                       value="Suivant"/>
+            </div>
+        </section>
+        <section class="section">
+            <h1 class="container__title">Paiement</h1>
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Informations de Paiement</legend>
+                <div class="personal-info__div">
+                    <label class="personal-info__label" for="nomTitulaire">Nom du titulaire de la carte</label>
+                    <input type="text" id="nomTitulaire" name="nomTitulaire" required class="personal-info__input"
+                           aria-describedby="err_nomTitulaire" autocomplete="cc-name"
+                           pattern="^[a-zA-ZÀ-ÿ -/']+[ ][a-zA-ZÀ-ÿ -/']+$" oninput="formatNomTitulaire(this)">
+                    <span class="error-message" id="err_nomTitulaire"></span>
+                </div>
+                <div class="personal-info__div">
+                    <label class="personal-info__label" for="numeroCarte">Numéro de la carte</label>
+                    <input type="text" id="numeroCarte" name="numeroCarte" required maxlength="19"
+                           class="personal-info__input" aria-describedby="err_numeroCarte"
+                           autocomplete="cc-number" pattern="^[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}$"
+                           oninput="formatCarte(this)">
+                    <span class="error-message" id="err_numeroCarte"></span>
+                </div>
+                <div class="personal-info__row row-mobile">
+                    <div class="card-form__col">
+                        <div class="card-form__group">
+                            <label class="personal-info__label" for="moisExpiration">Date d'Expiration</label>
+                            <div class="personal-info__row expiration">
+                                <select class="card-input__input" id="moisExpiration" name="moisExpiration"
+                                        required aria-describedby="err_moisExpiration">
+                                    <option value="" disabled selected>Mois</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+
+                                <label class="personal-info__label" for="anneeExpiration" style="display: none">Année
+                                    d'Expiration</label>
+                                <select class="card-input__input" id="anneeExpiration" name="anneeExpiration"
+                                        required aria-describedby="err_anneeExpiration">
+                                    <option value="" disabled selected>Année</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                </select>
+                            </div>
+                            <span class="error-message" id="err_moisExpiration"></span>
+                            <span style="display: none" class="error-message" id="err_anneeExpiration"></span>
+                        </div>
+                    </div>
+                    <div class="personal-info__div -cvv">
+                        <div class="card-input">
+                            <label class="personal-info__label" for="codeSecurite">CVV</label>
+                            <input class="codeSecurite card-input__input" type="text" id="codeSecurite"
+                                   name="codeSecurite"
+                                   required
+                                   maxlength="3" aria-describedby="err_codeSecurite" autocomplete="cc-csc"
+                                   pattern="^[0-9]{3}$">
+                            <span class="error-message" id="err_codeSecurite"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="personal-info__div">
+                    <label class="personal-info__label" for="codePostal">Code Postal</label>
+                    <input class="personal-info__input" type="text" id="codePostal" name="codePostal" required
+                           pattern="^[a-zA-Z][0-9][a-zA-Z] [0-9][a-zA-Z][0-9]$" maxlength="7"
+                           aria-describedby="err_codePostal" autocomplete="postal-code"
+                           oninput="formatCodePostal(this)">
+                    <span class="error-message" id="err_codePostal"></span>
+                </div>
+            </fieldset>
+            <div class="personal-info__btn">
+                <input type="button" name="previous"
+                       class="previous action-button-previous bouton bouton--secondaire review__submit-button"
+                       value="Précédent"/>
+                <input type="button" name="next" class="next action-button bouton review__submit-button"
+                       value="Suivant"/>
+            </div>
+        </section>
+        <section class="section">
+            <h1 class="container__title">Révision</h1>
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Mon don</legend>
+                <div class="personal-info__colomn">
+                    <p class="review__strong-paragraph">Type : <span class="review__paragraph" id="typeDonValue">Don unique</span>
+                    </p>
+                    <p class="review__strong-paragraph">Montant : <span class="review__paragraph"
+                                                                        id="montantDonValue">25$</span></p>
+                    <p class="review__strong-paragraph">Provenance : <span class="review__paragraph"
+                                                                           id="provenanceDonValue">Moi-même</span>
+                    </p>
+                </div>
+            </fieldset>
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Mes informations</legend>
+                <div class="personal-info__colomn">
+                    <p class="review__strong-paragraph">Prénom : <span class="review__paragraph"
+                                                                       id="review__prenom"></span></p>
+                    <p class="review__strong-paragraph">Nom : <span class="review__paragraph" id="review__nom"></span>
+                    </p>
+                    <p class="review__strong-paragraph">Courriel : <span class="review__paragraph"
+                                                                         id="review__courriel"></span></p>
+                    <p class="review__strong-paragraph">Pays : <span class="review__paragraph" id="review__pays"></span>
+                    </p>
+                    <p class="review__strong-paragraph">Province : <span class="review__paragraph"
+                                                                         id="review__province"></span></p>
+                    <p class="review__strong-paragraph">Adresse : <span class="review__paragraph"
+                                                                        id="review__adresse"></span></p>
+                    <p class="review__strong-paragraph">Code Postal : <span class="review__paragraph"
+                                                                            id="review__codePostalDeux"></span></p>
+                </div>
+            </fieldset>
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Paiement</legend>
+                <div class="personal-info__colomn">
+                    <p class="review__strong-paragraph">Titulaire : <span class="review__paragraph"
+                                                                          id="review__nomTitulaire"></span></p>
+                    <p class="review__strong-paragraph">Numéro de la carte : <span
+                            class="review__paragraph" id="review__numeroCarte"></span></p>
+                    <p class="review__strong-paragraph">Date d'Expiration : <span class="review__paragraph"
+                                                                                  id="review__anneeExpiration"></span>
+                    </p>
+                    <p class="review__strong-paragraph">Code de Sécurité : <span
+                            class="review__paragraph" id="review__codeSecurite"></span></p>
+                    <p class="review__strong-paragraph">Code Postal : <span class="review__paragraph"
+                                                                            id="review__codePostal"></span></p>
+                </div>
+            </fieldset>
+            <div class="personal-info__btn">
+                <input type="button" name="previous"
+                       class="previous action-button-previous bouton bouton--secondaire review__submit-button"
+                       value="Précédent"/>
+                <input id="montantDonValueConfirmation" value="Confirmer le Don de 25$" type="submit"
+                       class="bouton review__submit-button">
+            </div>
+        </section>
+    </form>
+    <div class="overlay" style="display: none"></div>
+    <aside class="aside" id="myAside" style="display: none">
+        <div class="aside__div">
+            <img class="aside__div-close" id="close" src="liaisons/images/close.svg" alt="icone fermé">
+        </div>
+        <img class="aside__icone" src="liaisons/images/check-circle.svg" alt="icone réussi">
+        <h1 class="aside__h1">Réussi</h1>
+        <p class="aside__p">Merci pour votre don <span id="review__prenomNom"></span></p>
+        <input type="button" name="reussi"
+               class="bouton action-button review__submit-button aside__input"
+               value="Aller à l’accueil"/>
+    </aside>
+</main>
+<script src="liaisons/js/stepLeft.js"></script>
+<script src="liaisons/js/fomulaire.js"></script>
+<script>
+    validation.chargeJSON("liaisons/js/objJSONMessages.json");
+</script>
+</body>
+</html>

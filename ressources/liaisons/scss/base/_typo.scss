@@ -13,7 +13,7 @@ html {
 
 body {
   font-family: $fonteSecondaire;
-  font-size: 16px; /* 16px pour toutes les largeurs d'écran */
+  //font-size: 16px; /* 16px pour toutes les largeurs d'écran */
   font-size: 1.6rem;
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
   @media (min-width: 601px) {
@@ -32,45 +32,51 @@ h3,
 
 h1,
 .titreNiveau1 {
-  @include fontSize(28px);
-  margin: 0;
-  &--desktop {
-    font-size: 48px;
-    font-size: 4.8rem;
-    padding-bottom: 15px;
-    position: relative;
-    &:after {
-      background-color: $bleuMoyen;
-      content: "";
-      display: inline-block;
-      width: 150px;
-      height: 8px;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-    }
-  }
-}
-
-h2,
-.titreNiveau2{
-  font-size: 20px;
-  font-size: 2rem;
-  text-transform: uppercase;
+  color: $noir;
+  font-family: $fontePrimaire;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 112.5% */
   &--desktop {
     font-size: 28px;
     font-size: 2.8rem;
   }
 }
 
+//h2,
+//.titreNiveau2 {
+//  color: $noir;
+//  font-family: $fontePrimaire;
+//  font-size: 3.2rem;
+//  font-style: normal;
+//  font-weight: 700;
+//  line-height: 36px; /* 112.5% */
+//  &--desktop {
+//    font-size: 28px;
+//    font-size: 2.8rem;
+//  }
+//}
+
 h3,
 .titreNiveau3 {
   font-size: 18px;
   font-size: 1.8rem;
+
   &--desktop {
     font-size: 22px;
     font-size: 2.2rem;
   }
+}
+
+legend {
+  align-self: stretch;
+  color: $noir;
+  font-family: $fontePrimaire;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 140% */
 }
 
 .texte {
@@ -78,7 +84,16 @@ h3,
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.375;
+
   &--desktop {
     line-height: 1.5;
   }
+}
+
+.review__strong-paragraph {
+  font-weight: 700;
+}
+
+.review__paragraph {
+  color: $grisFonce;
 }

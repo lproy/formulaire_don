@@ -1,0 +1,44 @@
+{
+    "prenom": {
+        "vide": "Veuillez saisir votre prénom.",
+        "pattern": "Pour le prénom, les accents français, les espaces, les tirets et les apostrophes sont permis."
+    },
+    "nom": {
+        "vide": "Veuillez saisir votre nom.",
+        "pattern": "Pour le nom de famille, les accents français, les espaces, les tirets et les apostrophes sont permis."
+    },
+    "courriel": {
+        "vide": "Veuillez saisir votre adresse courriel.",
+        "pattern": "Assurez-vous d'entrer une adresse courriel valide."
+    },
+    "adresse": {
+        "vide": "Veuillez saisir votre adresse.",
+        "pattern": "Entrez une adresse valide selon le format 123abc XYZ-123"
+    },
+    "codePostalDeux": {
+        "vide": "Veuillez saisir un code postal.",
+        "pattern": "Veuillez saisir un code postal selon le format A1A 1A1."
+    },
+    "nomTitulaire": {
+        "vide": "Veuillez saisir le nom du titulaire de la carte.",
+        "pattern": "Veuillez saisir le nom du titulaire de la carte selon le format Prenom Nom."
+    },
+    "numeroCarte": {
+        "vide": "Veuillez saisir le numéro de la carte.",
+        "pattern": "Veuillez saisir le numéro de la carte selon le format 1234 1234 1234 1234."
+    },
+    "codeSecurite": {
+        "vide": "Veuillez saisir le code de sécurité.",
+        "pattern": "Le code de sécurité comprend trois chiffres."
+    },
+    "codePostal": {
+        "vide": "Veuillez saisir un code postal.",
+        "pattern": "Veuillez saisir un code postal selon le format A1A 1A1."
+    },
+    "moisExpiration": {
+        "vide": "Veuillez saisir le mois et l'année d'expiration."
+    },
+    "anneeExpiration": {
+        "vide": "Veuillez saisir le mois et l'année d'expiration."
+    }
+}

@@ -9,29 +9,24 @@
 
 /** Polices de caractères **/
 
-@font-face {
-  font-family: Futura, sans-serif;
-  src: 	url('../fonts/Futura.ttc') format('truetype');
-}
-
-$fontePrimaire : Futura, sans-serif;
-$fonteSecondaire : Arial, sans-serif;
+$fontePrimaire : Poppins, sans-serif;
+$fonteSecondaire : Poppins, sans-serif;
 
 /** Palette de couleurs **/
 // Utiliser http://chir.ag/projects/name-that-color pour obtenir des noms uniques et mémorisables
 // Permettez-vous d'utiliser un nom de variable plus explicite si la suggestion de name-that-color est trop étrange
 
 /* Couleurs de base */
-$bleuMoyen: #358ae0;
-$bleuPale: #68a8e8;
-$vertLime: #bbd531;
-$bleuMinuit: #012d61;
-$bleuMarin: #2678B5;
-
-$bleuMoyenTransparent : transparentize($bleuMoyen, 0.50);
+$bleuFonce: #0072BC;
+$bleuPale: #AECBF0;
+$noir: #242731;
+$grisPale: #E2E4E5;
+$grisFonce: #74757E;
+$erreur: #FF5733;
+$positif: #00A88F;
 
 /* Autres couleurs */
-$hyperlien: $bleuMarin;
+$hyperlien: $bleuFonce;
 
 /** Points de rupture **/
 $desktop : 601px;

@@ -1,0 +1,94 @@
+/**
+* @author Prenom Nom courriel
+* @todo Compléter selon l'énoncé de l'exercice
+*/
+
+
+.hiddenInput {
+  display: none;
+  transition: 0.3s ease; /* Définissez la transition */
+}
+
+.montant__afficher {
+  position: relative;
+
+}
+
+#err_textInput {
+  position: relative;
+  top: -20px;
+  margin-left: 230px;
+  @media(min-width: 500px) {
+    margin-left: 250px;
+    top: -30px;
+
+  }
+}
+
+input[type="text"] {
+  //height: 42px;
+  padding: 8px 16px;
+  align-self: stretch;
+  border-radius: 8px;
+  border: 1px solid $grisPale;
+  background: white;
+
+  &:hover {
+    transition: 300ms;
+    background: #F2F2F2;
+  }
+
+  &:focus-visible {
+    transition: 300ms;
+    background: white;
+    outline: none;
+  }
+}
+
+input[type="email"] {
+  //height: 42px;
+  padding: 8px 16px;
+  align-self: stretch;
+  border-radius: 8px;
+  border: 1px solid $grisPale;
+
+  &:hover {
+    transition: 300ms;
+    background: #F2F2F2;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background: white;
+    border-color: $bleuFonce;
+  }
+}
+
+label {
+  color: $grisFonce;
+}
+
+select {
+  padding: 8px 16px;
+  align-self: stretch;
+  border-radius: 8px;
+  height: 42px;
+  border: 1px solid $grisPale;
+  background: white;
+
+  &:hover {
+    transition: 300ms;
+    background: #F2F2F2;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background: white;
+    border-color: $bleuFonce;
+  }
+}
+
+input[type="text"]:focus-visible {
+  border-color: $bleuFonce;
+}
+

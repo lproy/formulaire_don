@@ -35,7 +35,8 @@ input[type="text"] {
 
   &:hover {
     transition: 300ms;
-    background: #F2F2F2;
+    border: 1px solid $background;
+    background: $background;
   }
 
   &:focus-visible {
@@ -54,7 +55,8 @@ input[type="email"] {
 
   &:hover {
     transition: 300ms;
-    background: #F2F2F2;
+    border: 1px solid $background;
+    background: $background;
   }
 
   &:focus-visible {
@@ -75,10 +77,11 @@ select {
   height: 42px;
   border: 1px solid $grisPale;
   background: white;
+  color: $noir;
 
   &:hover {
     transition: 300ms;
-    background: #F2F2F2;
+    background: $background;
   }
 
   &:focus-visible {

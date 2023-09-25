@@ -85,11 +85,11 @@
 @mixin couleur{
     border-radius: 8px;
     color: $bleuFonce;
-    border: 1px solid $bleuFonce;
+    border: 2px solid $bleuFonce;
 }
 
 @mixin btnRadio{
-    background: #FFFFFF;
+    background: $background;
     display: flex;
     width: calc(50% - 14px);
     height: 72px;
@@ -99,14 +99,14 @@
     gap: 8px;
     flex-shrink: 0;
     border-radius: 8px;
-    border: 1px solid $grisPale;
+    border: 2px solid $background;
     color: $grisFonce;
     transition: 300ms;
 }
 
 
 @mixin checked{
-    border: 1px solid $bleuFonce;
-    background: #AECBF0;
+    border: 2px solid $bleuPale;
+    background: $bleuPale;
     color: $noir;
 }

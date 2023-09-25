@@ -22,8 +22,15 @@ function showStep(stepNumber) {
     progressBarItems.forEach((item, index) => {
         if (index === stepNumber - 1) {
             item.classList.add("active");
-        } else if (index === stepNumber) {
+        } else {
             item.classList.remove("active");
+        }
+
+        if (index < stepNumber - 1) {
+            item.classList.add("completed");
+        } else {
+            item.classList.remove("completed");
+            item.classList.remove("erreur");
         }
     });
 }

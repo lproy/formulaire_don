@@ -49,9 +49,6 @@ const MonFormulaire = {
 
         } else if (this.validerPaterne(event) === true) {
             this.afficherChampErreur(event, 'Veuillez saisir un montant différent de zéro.');
-            // this.afficherBorderInput(event);
-            // event.style.display = 'block';
-            // this.montantAffiche.style.display = 'none';
         } else {
             event.style.display = 'none';
             this.montantAffiche.style.display = 'block';
@@ -171,8 +168,14 @@ let validation = {
         if (currentStep < steps.length) {
             // Effectuez la validation ici avant de passer à l'étape suivante
             if (this.validerEtape(currentStep)) {
+                if (this.refFormulaire.querySelector('.erreur')){
+                    this.refFormulaire.querySelector('.active').classList.remove("erreur");
+                }
                 currentStep++;
                 showStep(currentStep);
+            } else {
+                this.refFormulaire.querySelector('.active').classList.add("erreur");
+                console.log('hello')
             }
         }
     },
@@ -331,8 +334,11 @@ let validation = {
                     valide = true;
                     let nom = "review__" + objCible.getAttribute("id");
                     document.getElementById(nom).innerHTML = objCible.value;
-                    if (objCible.getAttribute("id") === "prenom" || objCible.getAttribute("id") === "nom") {
-                        let prenomNomElement = document.getElementById('review__prenomNom');
+                    let prenomNomElement = document.getElementById('review__prenomNom');
+                    if (objCible.getAttribute("id") === "prenom") {
+                        prenomNomElement.innerHTML = objCible.value.trim();
+                    }
+                    if (objCible.getAttribute("id") === "nom"){
                         prenomNomElement.innerHTML = (prenomNomElement.innerHTML + ' ' + objCible.value).trim();
                     }
                     //effacer le champ d'erreur

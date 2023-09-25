@@ -476,65 +476,92 @@ th {
 #progressbar {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-top: 20px;
   overflow: hidden;
   /*CSS counters to number the steps*/
   counter-reset: step;
   width: 100%;
 }
-
 #progressbar li {
   display: flex;
   flex-direction: column;
   align-items: center;
   list-style-type: none;
-  color: #74757E;
-  font-size: 10px;
+  color: #5E5F68;
+  font-size: 14px;
   width: 33.33%;
   gap: 8px;
   float: left;
   position: relative;
   letter-spacing: 1px;
 }
-
+@media (min-width: 500px) {
+  #progressbar li {
+    font-size: 16px;
+  }
+}
 #progressbar li:before {
   content: counter(step);
   counter-increment: step;
   width: 24px;
   height: 24px;
-  font-size: 12px;
-  color: #74757E;
-  border: 1px solid #74757E;
+  font-size: 18px;
+  color: #5E5F68;
+  outline: 3px solid #F7F7FC;
+  border: 2px solid #5E5F68;
   background: white;
   border-radius: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-/*progressbar connectors*/
 #progressbar li:after {
+  border: 1px solid #5E5F68;
   content: "";
   width: 100%;
   height: 2px;
-  background: #74757E;
+  background: #5E5F68;
   position: absolute;
   left: -50%;
-  top: 9px;
+  top: 19%;
   z-index: -1; /*put it behind the numbers*/
 }
-
 #progressbar li:first-child:after {
   /*connector not needed before the first step*/
   content: none;
 }
 
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
 #progressbar li.active:before, #progressbar li.active:after {
   background: #0072BC;
   color: white;
   border-color: #0072BC;
+}
+
+#progressbar li.active {
+  font-weight: 700;
+  color: #0072BC;
+}
+
+#progressbar li.completed {
+  font-weight: normal;
+  color: #00A88F;
+}
+
+#progressbar li.erreur {
+  font-weight: normal;
+  color: #FF5733;
+}
+
+#progressbar li.erreur:before, #progressbar li.erreur:after {
+  background: #FF5733;
+  color: white;
+  border-color: #FF5733;
+}
+
+#progressbar li.completed:before, #progressbar li.completed:after {
+  background: #00A88F;
+  color: white;
+  border-color: #00A88F;
 }
 
 /** Typographie **/
@@ -573,10 +600,12 @@ h1,
   font-weight: 700;
   line-height: 36px; /* 112.5% */
 }
-h1--desktop,
-.titreNiveau1--desktop {
-  font-size: 28px;
-  font-size: 2.8rem;
+@media (min-width: 500px) {
+  h1,
+  .titreNiveau1 {
+    margin-top: 0;
+    font-size: 3.2rem;
+  }
 }
 
 h3,
@@ -615,7 +644,7 @@ legend {
 }
 
 .review__paragraph {
-  color: #74757E;
+  color: #5E5F68;
 }
 
 /**
@@ -652,7 +681,8 @@ input[type=text] {
 }
 input[type=text]:hover {
   transition: 300ms;
-  background: #F2F2F2;
+  border: 1px solid #F7F7FC;
+  background: #F7F7FC;
 }
 input[type=text]:focus-visible {
   transition: 300ms;
@@ -668,7 +698,8 @@ input[type=email] {
 }
 input[type=email]:hover {
   transition: 300ms;
-  background: #F2F2F2;
+  border: 1px solid #F7F7FC;
+  background: #F7F7FC;
 }
 input[type=email]:focus-visible {
   outline: none;
@@ -677,7 +708,7 @@ input[type=email]:focus-visible {
 }
 
 label {
-  color: #74757E;
+  color: #5E5F68;
 }
 
 select {
@@ -687,10 +718,11 @@ select {
   height: 42px;
   border: 1px solid #E2E4E5;
   background: white;
+  color: #242731;
 }
 select:hover {
   transition: 300ms;
-  background: #F2F2F2;
+  background: #F7F7FC;
 }
 select:focus-visible {
   outline: none;
@@ -719,7 +751,7 @@ input[type=text]:focus-visible {
   text-decoration: underline;
 }
 .hyperlien--active {
-  color: #AECBF0;
+  color: #99B8E2;
   text-decoration: underline;
 }
 
@@ -735,7 +767,7 @@ input[type=text]:focus-visible {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  border-radius: 4px;
+  border-radius: 8px;
   border: 2px solid #0072BC;
   background: #0072BC;
   color: white;
@@ -748,11 +780,11 @@ input[type=text]:focus-visible {
   }
 }
 .bouton:hover {
-  background-color: rgba(174, 203, 240, 0.75);
+  background-color: rgba(153, 184, 226, 0.75);
   color: #242731;
 }
 .bouton:active {
-  background-color: rgba(174, 203, 240, 0.5);
+  background-color: rgba(153, 184, 226, 0.5);
 }
 .bouton--secondaire {
   background-color: white;
@@ -760,11 +792,11 @@ input[type=text]:focus-visible {
   border: 2px solid #0072BC;
 }
 .bouton--secondaire:hover {
-  border-color: rgba(174, 203, 240, 0.75);
+  border-color: rgba(153, 184, 226, 0.75);
   border: 2px solid #0072BC;
 }
 .bouton--secondaire:active {
-  border-color: rgba(174, 203, 240, 0.5);
+  border-color: rgba(153, 184, 226, 0.5);
 }
 
 /**
@@ -776,7 +808,7 @@ input[type=radio] {
 }
 
 input[type=radio] + label {
-  background: #FFFFFF;
+  background: #F7F7FC;
   display: flex;
   width: calc(50% - 14px);
   height: 72px;
@@ -786,8 +818,8 @@ input[type=radio] + label {
   gap: 8px;
   flex-shrink: 0;
   border-radius: 8px;
-  border: 1px solid #E2E4E5;
-  color: #74757E;
+  border: 2px solid #F7F7FC;
+  color: #5E5F68;
   transition: 300ms;
 }
 @media (min-width: 500px) {
@@ -799,18 +831,18 @@ input[type=radio] + label {
 input[type=radio]:hover + label {
   border-radius: 8px;
   color: #0072BC;
-  border: 1px solid #0072BC;
+  border: 2px solid #0072BC;
 }
 
 input[type=radio]:checked + label {
   border-radius: 8px;
-  border: 1px solid #0072BC;
-  background: #AECBF0;
+  border: 2px solid #99B8E2;
+  background: #99B8E2;
   color: #242731;
 }
 
 .form__label-text {
-  background: #FFFFFF;
+  background: #F7F7FC;
   display: flex;
   width: calc(50% - 14px);
   height: 72px;
@@ -820,8 +852,8 @@ input[type=radio]:checked + label {
   gap: 8px;
   flex-shrink: 0;
   border-radius: 8px;
-  border: 1px solid #E2E4E5;
-  color: #74757E;
+  border: 2px solid #F7F7FC;
+  color: #5E5F68;
   transition: 300ms;
   flex-direction: column-reverse;
 }
@@ -834,17 +866,26 @@ input[type=radio]:checked + label {
 .form__label-text:hover:not(.checked) {
   border-radius: 8px;
   color: #0072BC;
-  border: 1px solid #0072BC;
+  border: 2px solid #0072BC;
 }
 
 /* Styles pour le label lorsque le bouton radio "autre" est coché */
 .checked {
-  border: 1px solid #0072BC;
-  background: #AECBF0;
+  border: 2px solid #99B8E2;
+  background: #99B8E2;
   color: #242731;
 }
 
 /****** MODULES ******/
+body {
+  background: #FFFFFF;
+}
+@media (min-width: 600px) {
+  body {
+    background: #F7F7FC;
+  }
+}
+
 html {
   height: 100%;
 }
@@ -865,28 +906,32 @@ html {
 .conteneur .form {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 24px;
   width: 100%;
 }
 @media (min-width: 500px) {
   .conteneur .form {
     gap: 32px;
-    width: 456px;
+    width: auto;
   }
 }
 .conteneur .form .section {
+  background: #FFFFFF;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
   align-self: stretch;
-  padding-bottom: 24px;
+  padding: 0;
+  margin-bottom: 24px;
 }
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   .conteneur .form .section {
     gap: 32px;
-    padding-bottom: 32px;
+    padding: 32px;
+    margin-bottom: 32px;
+    border-radius: 15px;
   }
 }
 .conteneur .form .section .container__h2 {

@@ -11,9 +11,10 @@
 <body>
 <main class="conteneur">
     <form class="form" id="msform">
+        <img class="logo" src="liaisons/images/logo.svg" alt="logo">
         <ul id="progressbar">
             <li class="active">Mon don</li>
-            <li>Mes informations</li>
+            <li>Mes infos</li>
             <li>Paiement</li>
             <li>Révision</li>
         </ul>
@@ -42,7 +43,7 @@
                     <label class="form__label form__label-text" for="autre" tabindex="6">
                         <label class="form__label" for="textInput" style="display: none"></label>
                         <input type="text" name="textInput" class="autre hiddenInput" id="textInput"
-                               aria-describedby="err_autre" oninput=" this.value = this.value.replace(/[^0-9]/g, '');">
+                               aria-describedby="err_autre" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                         <span class="montant__afficher" id="montant"></span>
                         <input id="autre" type="radio" name="montant" value="autre" class="form__radio">
                         Autre montant

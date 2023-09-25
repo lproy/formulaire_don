@@ -58,7 +58,10 @@
 /****** MODULES ******/
 
 body {
-  //max-width: 100%;
+  background: #FFFFFF;
+  @media(min-width: 600px) {
+    background: #F7F7FC;
+  }
 }
 
 html {
@@ -83,69 +86,74 @@ html {
   .form {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 24px;
     width: 100%;
     @media(min-width: 500px) {
       gap: 32px;
-      width: 456px;
+      width: auto;
     }
       .section {
+        background: #FFFFFF;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 24px;
         align-self: stretch;
-        padding-bottom: 24px;
-        @media(min-width: 500px) {
+        padding: 0;
+        margin-bottom: 24px;
+        @media(min-width: 600px) {
           gap: 32px;
-          padding-bottom: 32px;
+          padding: 32px;
+          margin-bottom: 32px;
+          border-radius: 15px;
         }
 
-        .container__h2 {
-          color: $noir;
-          margin: 0;
-        }
-
-        .form__fieldset {
-          display: flex;
-          width: 100%;
-          justify-content: space-between;
-          align-items: flex-start;
-          align-content: flex-start;
-          flex-wrap: wrap;
-          border: none;
-          padding: 0;
-          margin: 0;
-          @media(min-width: 500px) {
-            row-gap: 32px;
-            width: 456px;
+          .container__h2 {
+            color: $noir;
+            margin: 0;
           }
 
-          .form__legend {
-            margin-bottom: 24px;
-            @media(min-width: 500px) {
-              margin-bottom: 32px;
-            }
-
-          }
-
-          .form__div-deux {
+          .form__fieldset {
             display: flex;
             width: 100%;
+            justify-content: space-between;
             align-items: flex-start;
             align-content: flex-start;
-            gap: 24px;
-            justify-content: space-between;
             flex-wrap: wrap;
+            border: none;
+            padding: 0;
+            margin: 0;
             @media(min-width: 500px) {
               row-gap: 32px;
               width: 456px;
             }
+
+            .form__legend {
+              margin-bottom: 24px;
+              @media(min-width: 500px) {
+                margin-bottom: 32px;
+              }
+
+            }
+
+            .form__div-deux {
+              display: flex;
+              width: 100%;
+              align-items: flex-start;
+              align-content: flex-start;
+              gap: 24px;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              @media(min-width: 500px) {
+                row-gap: 32px;
+                width: 456px;
+              }
+            }
           }
         }
       }
-    }
+    //}
   }
 
 
